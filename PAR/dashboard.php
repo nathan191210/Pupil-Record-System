@@ -243,9 +243,9 @@ header, section, footer, aside, article, figure {
   <div class="sidebar1">
     <ul class="nav">
       <li><a href="pupileditor.php">Pupil Editor</a></li>
-      <li><a href="staffeditor">Staff Editor</a></li>
-      <li><a href="subjecteditor">Subject Editor</a></li>
-      <li><a href="lessoneditor">Lesson Editor</a></li>
+      <li><a href="staffeditor.php">Staff Editor</a></li>
+      <li><a href="subjecteditor.php">Subject Editor</a></li>
+      <li><a href="lessoneditor.php">Lesson Editor</a></li>
       
     </ul>
     <div class = "new2">
