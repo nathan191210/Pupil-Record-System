@@ -1,13 +1,18 @@
 <!doctype html>
 <html>
 <head>
+
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Pupil Editor</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
 <style type="text/css">
 <!--
 body {
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
-	background-color: #42413C;
+	background-color: #A7DBD8;
 	margin: 0;
 	padding: 0;
 	color: #000;
@@ -21,32 +26,80 @@ h1, h2, h3, h4, h5, h6, p {
 	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing block. The remaining bottom margin will hold it away from any elements that follow. */
 	padding-right: 15px;
 	padding-left: 15px; /* adding the padding to the sides of the elements within the blocks, instead of the block elements themselves, gets rid of any box model math. A nested block with side padding can also be used as an alternate method. */
+	text-align: left;
 }
 a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
 	border: none;
 }
 /* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
 a:link {
-	color: #42413C;
+	color: #F38630;
 	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
 }
 a:visited {
-	color: #6E6C64;
+	color: #F38630;
 	text-decoration: underline;
 }
 a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
 	text-decoration: none;
+	color: #000000;
 }
 /* ~~ This fixed width container surrounds all other blocks ~~ */
 .container {
 	width: 960px;
-	background-color: #FFFFFF;
+	background-color: #FFFEF7;
 	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
 }
 /* ~~ The header is not given a width. It will extend the full width of your layout. ~~ */
 header {
-	background-color: #ADB96E;
+	background-color: rgb(243,134,48);
 }
+.nav2 ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav2 li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 30px;
+  border-bottom: 1px solid #888;
+}
+ 
+.nav2 a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+ 
+.nav2 a:hover {
+  background-color: rgb(105,210,231);
+}
+ 
+.nav2 a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+ 
+@media screen and (min-width: 600px) {
+  .nav2 li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+  }
+ 
+  /* Option 1 - Display Inline */
+  .nav2 li {
+    display: inline-block;
+    margin-right: -4px;
+  }
 /* ~~ These are the columns for the layout. ~~ 
 
 1) Padding is only placed on the top and/or bottom of the block elements. The elements within these blocks have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the block itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the block element and place a second block element within it with no width and the padding necessary for your design.
@@ -61,19 +114,23 @@ header {
 .sidebar1 {
 	float: left;
 	width: 180px;
-	background-color: #EADCAE;
+	background-color: #69D2E7;
 	padding-bottom: 10px;
+	height: auto;
+}
+.container footer a {
+	color: rgb(0,0,0);
+}
+.container footer p center a:hover {
+	color: rgb(0,0,0);
+}
+.container footer p center a:link {
+	color: rgb(0,0,0);
 }
 .content {
 	padding: 10px 0;
-	width: 600px;
-	float: left;
-}
-aside {
-	float: left;
-	width: 180px;
-	background-color: #EADCAE;
-	padding: 10px 0;
+	width: 780px;
+	float: right;
 }
 
 /* ~~ This grouped selector gives the lists in the .content area space ~~ */
@@ -95,39 +152,31 @@ ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your li
 	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
 	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
 	text-decoration: none;
-	background-color: #C6D580;
+	background-color: rgb(105,210,231);
 }
 ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
-	background-color: #ADB96E;
-	color: #FFF;
+	background-color: #F38630;
+	color: rgb(105,210,231);
 }
 
 /* ~~ The footer ~~ */
 footer {
 	padding: 10px 0;
-	background-color: #CCC49F;
+	background-color: rgb(243,134,48);
 	position: relative;/* this gives IE6 hasLayout to properly clear */
 	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
-}
-/* ~~ Miscellaneous float/clear classes ~~ */
-.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
-	float: right;
-	margin-left: 8px;
-}
-.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
-	float: left;
-	margin-right: 8px;
-}
-.clearfloat { /* this class can be placed on a <br /> or empty block element as the final element following the last floated block (within the .container) if the footer is removed or taken out of the .container */
-	clear:both;
-	height:0;
-	font-size: 1px;
-	line-height: 0px;
+	text-align: center;
 }
 
 /*HTML 5 support - Sets new HTML 5 tags to display:block so browsers know how to render the tags properly. */
 header, section, footer, aside, article, figure {
 	display: block;
+	text-align: left;
+}
+.container .content section #chart1 {
+	height: 200px;
+	width: 40%;
+	float: left;
 }
 -->
 </style><!--[if lt IE 9]>
@@ -138,47 +187,72 @@ header, section, footer, aside, article, figure {
 
 <div class="container">
   <header>
-    <a href="#"><img src="" alt="Insert Logo Here" width="180" height="90" id="Insert_logo" style="background-color: #C6D580; display:block;" /></a>
+    <p><img src="images/logo.png" width="407" height="217" longdesc="http://index.php"></p> 
+    <div class="nav2">
+      <ul>
+        <li><a href="dashboard.php">Home</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="logout.php">Log Out</a></li>
+      </ul>
+      </div> 
   </header>
+   
+ 
+ 
   <div class="sidebar1">
     <ul class="nav">
-      <li><a href="#">Link one</a></li>
-      <li><a href="#">Link two</a></li>
-      <li><a href="#">Link three</a></li>
-      <li><a href="#">Link four</a></li>
+      <li><a href="#">link 1</a></li>
+      <li><a href="#">link 2</a></li>
+      <li><a href="#">link 3</a></li>
+      <li><a href="#">link 4 </a></li>
+      <li><a href="#">link 5</a></li>
     </ul>
-    <aside>
-      <p> The above links demonstrate a basic navigational structure using an unordered list styled with CSS. Use this as a starting point and modify the properties to produce your own unique look. If you require flyout menus, create your own using a Spry menu, a menu widget from Adobe's Exchange or a variety of other javascript or CSS solutions.</p>
-      <p>If you would like the navigation along the top, simply move the ul to the top of the page and recreate the styling.</p>
-    </aside>
+    <div class = "new2">
+    </hr>
+    </div>
+   
   <!-- end .sidebar1 --></div>
   <article class="content">
-    <h1>Instructions</h1>
+    <h1>Subject Editor</h1>
     <section>
-     <h2>How to use this document</h2>
-      <p>Be aware that the CSS for these layouts is heavily commented. If you do most of your work in Design view, have a peek at the code to get tips on working with the CSS for the fixed layouts. You can remove these comments before you launch your site. To learn more about the techniques used in these CSS Layouts, read this article at Adobe's Developer Center - <a href="http://www.adobe.com/go/adc_css_layouts">http://www.adobe.com/go/adc_css_layouts</a>.</p>
+<?php
+if (!isset($_POST['submit'])){
+?>
+     <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+Subject: <input type="text" name="Subject" /><br />
+Descripton: <input type="text" name="Description" /><br />
+ 
+<input type="submit" name="submit" value="add" />
+</form>
+
+<?php 
+require_once("db_const.php");
+$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+# check connection
+if ($mysqli->connect_errno) {
+echo "<p>MySQL error no {$mysqli->connect_errno} : {$mysqli->connect_error}</p>";
+exit();
+}
+if(isset($_POST['forename'])){ $forename = $_POST['forename']; }
+if(isset($_POST['surname'])){ $surname = $_POST['surname']; }
+
+
+$sql = "INSERT INTO person(Forename, Surname) VALUES({$forename},{$surname});
+";
+
+$mysqli->query($sql);
+}
+?>
+    
     </section>
-    <section>
-      <h2>Clearing Method</h2>
-      <p>Because all the columns are floated, this layout uses a clear:both declaration in the footer rule.  This clearing technique forces the .container to understand where the columns end in order to show any borders or background colors you place on the .container. If your design requires you to remove the footer from the .container, you'll need to use a different clearing method. The most reliable will be to add a &lt;br class=&quot;clearfloat&quot; /&gt; or &lt;div  class=&quot;clearfloat&quot;&gt;&lt;/div&gt; after your final floated column (but before the .container closes). This will have the same clearing effect. </p>
-    </section>
-    <section>
-      <h2>Logo Replacement</h2>
-      <p>An image placeholder was used in this layout in the header where you'll likely want to place  a logo. It is recommended that you remove the placeholder and replace it with your own linked logo. </p>
-      <p> Be aware that if you use the Property inspector to navigate to your logo image using the SRC field (instead of removing and replacing the placeholder), you should remove the inline background and display properties. These inline styles are only used to make the logo placeholder show up in browsers for demonstration purposes. </p>
-      <p>To remove the inline styles, make sure your CSS Styles panel is set to Current. Select the image, and in the Properties pane of the CSS Styles panel, right click and delete the display and background properties. (Of course, you can always go directly into the code and delete the inline styles from the image or placeholder there.)</p>
-    </section>
-  <!-- end .content --></article>
-  <aside>
-    <h4>Backgrounds</h4>
-    <p>By nature, the background color on any block element will only show for the length of the content. If you'd like a dividing line instead of a color, place a border on the side of the .content block (but only if it will always contain more content).</p>
-  </aside>
+  </article>
+  <!-- end .content -->
   <footer>
-    <p>This footer contains the declaration position:relative; to give Internet Explorer 6 hasLayout for the footer and cause it to clear correctly. If you're not required to support IE6, you may remove it.</p>
+    <p><center><a href="dashboard.php">Home</a> | <a href="#">Contact Us</a> | <a href="#">Terms of Use</a></center></p>
     <address>
-      Address Content
+     PAR - Pupil Assessment Record
     </address>
   </footer>
-  <!-- end .container --></div>
+<!-- end .container --></div>
 </body>
 </html>

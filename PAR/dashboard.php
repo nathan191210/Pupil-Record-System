@@ -242,11 +242,11 @@ header, section, footer, aside, article, figure {
  
   <div class="sidebar1">
     <ul class="nav">
-      <li><a href="pupil.php">Pupil Editor</a></li>
-      <li><a href="#">Staff Editor</a></li>
-      <li><a href="#">Subject Editor</a></li>
-      <li><a href="#">Lesson Editor</a></li>
-      <li><a href="#">Subject Editor</a></li>
+      <li><a href="pupileditor.php">Pupil Editor</a></li>
+      <li><a href="staffeditor">Staff Editor</a></li>
+      <li><a href="subjecteditor">Subject Editor</a></li>
+      <li><a href="lessoneditor">Lesson Editor</a></li>
+      
     </ul>
     <div class = "new2">
     </hr>
@@ -263,7 +263,7 @@ header, section, footer, aside, article, figure {
   </article>
   <!-- end .content -->
   <footer>
-    <p><center><a href="#">Home</a> | <a href="#">Contact Us</a> | <a href="#">Terms of Use</a></center></p>
+    <p><center><a href="dashboard.php">Home</a> | <a href="#">Contact Us</a> | <a href="#">Terms of Use</a></center></p>
     <address>
      PAR - Pupil Assessment Record
     </address>

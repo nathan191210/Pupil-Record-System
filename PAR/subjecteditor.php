@@ -213,14 +213,14 @@ header, section, footer, aside, article, figure {
    
   <!-- end .sidebar1 --></div>
   <article class="content">
-    <h1>Pupil Editor</h1>
+    <h1>Subject Editor</h1>
     <section>
 <?php
 if (!isset($_POST['submit'])){
 ?>
      <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-Forename: <input type="text" name="forename" /><br />
-Surname: <input type="text" name="surname" /><br />
+Subject Name: <input type="text" name="subjectname" /><br />
+Subject Descripton: <input type="text" name="subjectdescription" /><br />
  
 <input type="submit" name="submit" value="add" />
 </form>
