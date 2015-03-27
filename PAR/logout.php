@@ -20,5 +20,5 @@ setcookie(session_name(), '', time()-50000, '/');
 // destroy the session
 session_destroy();
  
-redirect_to("login.php");
+redirect_to("index.php");
 ?>
