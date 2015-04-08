@@ -15,35 +15,8 @@ redirect_to("nathanbarlowdean.com/dashboard.php");
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>PAR - Splash</title>
 <style type="text/css">
-body {
-	background-color: #A7DBD8;
-	margin: 0;
-	padding: 0;
-	color: #FA6900;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 100%;
-	line-height: 1.4;
-	height: 100%
-}
-
-.container-main .top {
-	background-color: rgb(243,134,48);
-	height: 400px;
-}
-.container-main .top img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	vertical-align: middle;
-}
-.container-main .bottom form {
-
-}
-.container-main .bottom {
-		width: 300px;
-    margin: 0 auto;
-}
 </style>
+<link href="CSS/SplashCSS.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -89,8 +62,8 @@ echo "<p>Invalid username/password combination</p>";
 echo "<p>Logged in successfully</p>";
 	// Authenticated, set session variables
 	$user = $result->fetch_array();
-	$_SESSION['user_id'] = $user['id'];
-	$_SESSION['username'] = $user['username'];
+	$_SESSION['user_id'] = $user['Admin_id'];
+	$_SESSION['username'] = $user['Username'];
 	redirect_to("/dashboard.php");
 	// do stuffs
 }

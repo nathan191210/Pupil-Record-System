@@ -1,15 +1,4 @@
-<!doctype html>
-<html>
-<head>
-
-<meta charset="utf-8">
-<!-- TemplateBeginEditable name="doctitle" -->
-<title>Pupil Editor</title>
-<!-- TemplateEndEditable -->
-<!-- TemplateBeginEditable name="head" -->
-<!-- TemplateEndEditable -->
-<style type="text/css">
-<!--
+@charset "utf-8";
 body {
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
 	background-color: #A7DBD8;
@@ -68,6 +57,19 @@ header {
   height: 30px;
   border-bottom: 1px solid #888;
 }
+  .nav2 li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+  }
+ 
+  /* Option 1 - Display Inline */
+  .nav2 li {
+    display: inline-block;
+    margin-right: -4px;
+  }
  
 .nav2 a {
   text-decoration: none;
@@ -85,21 +87,6 @@ header {
   color: #444;
   cursor: default;
 }
- 
-@media screen and (min-width: 600px) {
-  .nav2 li {
-    width: 120px;
-    border-bottom: none;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.4em;
-  }
- 
-  /* Option 1 - Display Inline */
-  .nav2 li {
-    display: inline-block;
-    margin-right: -4px;
-  }
 /* ~~ These are the columns for the layout. ~~ 
 
 1) Padding is only placed on the top and/or bottom of the block elements. The elements within these blocks have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the block itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the block element and place a second block element within it with no width and the padding necessary for your design.
@@ -178,80 +165,3 @@ header, section, footer, aside, article, figure {
 	width: 40%;
 	float: left;
 }
--->
-</style><!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]--></head>
-
-<body>
-
-<div class="container">
-  <header>
-    <p><img src="images/logo.png" width="407" height="217" longdesc="http://index.php"></p> 
-    <div class="nav2">
-      <ul>
-        <li><a href="dashboard.php">Home</a></li>
-        <li><a href="#">Help</a></li>
-        <li><a href="logout.php">Log Out</a></li>
-      </ul>
-      </div> 
-  </header>
-   
- 
- 
-  <div class="sidebar1">
-    <ul class="nav">
-      <li><a href="#">link 1</a></li>
-      <li><a href="#">link 2</a></li>
-      <li><a href="#">link 3</a></li>
-      <li><a href="#">link 4 </a></li>
-      <li><a href="#">link 5</a></li>
-    </ul>
-    <div class = "new2">
-    </hr>
-    </div>
-   
-  <!-- end .sidebar1 --></div>
-  <article class="content">
-    <h1>Pupil Editor</h1>
-    <section>
-<?php
-if (!isset($_POST['submit'])){
-?>
-     <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-Forename: <input type="text" name="forename" /><br />
-Surname: <input type="text" name="surname" /><br />
- 
-<input type="submit" name="submit" value="add" />
-</form>
-
-<?php
-require_once("db_const.php");
-$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-# check connection
-if ($mysqli->connect_errno) {
-echo "<p>MySQL error no {$mysqli->connect_errno} : {$mysqli->connect_error}</p>";
-exit();
-}
-if(isset($_POST['forename'])){ $forename = $_POST['forename']; }
-if(isset($_POST['surname'])){ $surname = $_POST['surname']; }
-
-
-$sql = "INSERT INTO person(Forename, Surname) VALUES({$forename},{$surname});
-";
-
-$mysqli->query($sql);
-}?>
-    
-    </section>
-  </article>
-  <!-- end .content -->
-  <footer>
-    <p><center><a href="dashboard.php">Home</a> | <a href="#">Contact Us</a> | <a href="#">Terms of Use</a></center></p>
-    <address>
-     PAR - Pupil Assessment Record
-    </address>
-  </footer>
-<!-- end .container --></div>
-</body>
-</html>
