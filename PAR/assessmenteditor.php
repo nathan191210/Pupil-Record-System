@@ -43,25 +43,46 @@
    
   <!-- end .sidebar1 --></div>
   <article class="content">
-    <h1>Subject Editor</h1>
+    <h1>Assessment Editor</h1>
     <section>
-	<h3>Add New Subject</h3>
+	<h3>Create New Assessment</h3>
   
     <form method="post">
-		Subject Name: <input type="text" name="subname" /><br />
+		Assement Name: 
+		  <input type="text" name="assname" /><br />
+        Out of: 
+		  <input type="text" name="assout" /><br />
+        Pass Mark: 
+		  <input type="text" name="asspass" /><br />      
+        Lesson: <select name="lesson" >
+        <?php 
+            require_once("db_const.php");
+            $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+            $sql= "SELECT * FROM lesson";
+            $result=mysqli_query($mysqli,$sql);
+            
+            while($row=mysqli_fetch_assoc($result))
+            {
+            echo '<option value="'.$row['Lesson_ID'].'">'.$row['Lesson_Title'].'</option>';
+            }
+         ?>               
 		<input type="submit" name="submit" value="Add" />
 	</form>
      
     <?php	
-	if (isset($_POST['submit'])){
+		if (isset($_POST['submit'])){
 		require_once("db_const.php");
 		$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 		
-		if(isset($_POST['subname'])){ $subname = $_POST['subname']; }
+		if(isset($_POST['assname'])){ $assname = $_POST['assname']; }
+		if(isset($_POST['assout'])){ $assout = $_POST['assout']; }
+		if(isset($_POST['asspass'])){ $asspass = $_POST['asspass']; }
+		if(isset($_POST['lesson'])){ $lesson = $_POST['lesson']; }
 	
-		$sql1 = "INSERT INTO subject(Subject_Name)VALUES('$subname')";	
-		$mysqli->query($sql1);
-	}	
+		$sql1 = "INSERT INTO assessment(Assessment_Title, Out_Of, Pass_Mark, Lesson_Lesson_ID)VALUES('$assname', 'assout', 'asspass', '$lesson')";	
+			$mysqli->query($sql1);
+		
+		}
 	?> 
 
     

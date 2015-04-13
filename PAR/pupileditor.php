@@ -44,10 +44,10 @@
   <article class="content">
     <h1>Pupil Editor</h1>
     <section>
-    
+    <h3>Add new Pupil</h3>
   
     <form method="post">
-		Forname: <input type="text" name="forname" /><br />
+		Forname: <input type="text" name="forename" /><br />
 		Surname: <input type="text" name="Surname" /><br /> 
 		<input type="submit" name="submit" value="Login" />
 	</form>
@@ -58,34 +58,16 @@
 		require_once("db_const.php");
 		$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 		
-		if(isset($_POST['forname'])){ $forname = $_POST['forname']; }
-		if(isset($_POST['Surname'])){ $Surname = $_POST['Surname']; }	
+		if(isset($_POST['forename'])){ $forename = $_POST['forename']; }
+		if(isset($_POST['Surname'])){ $surname = $_POST['Surname']; }	
 		
-		$sql = "
-				INSERT person(Forename, Surname)
-				VALUES('Milk', 'eater');	
-				
-				INSERT INTO class_person(Person_Person_ID,Class_Class_ID)
-				VALUES((
-				SELECT Person_ID
-				FROM person
-    			WHERE person.Forename = 'Milk' and person.Surname = 'eater'
-				),(
-				SELECT Class_ID
-   				FROM class 
-    			WHERE class.Class_Name = 'Class 1'
-				));
-
-				INSERT INTO pupil(Person_Person_ID)
-				VALUES(
-				(SELECT Person_ID
-   				FROM person
-   				WHERE person.Forename = 'Milk' and person.Surname = 'eater')
-				);
-		";				
-					
-		
-		$mysqli->query($sql);
+		$sql1 = "INSERT person(Forename, Surname)VALUES('$forename', '$surname')";	
+		$sql2 = "INSERT INTO class_person(Person_Person_ID,Class_Class_ID)VALUES((SELECT Person_ID FROM person WHERE person.Forename = '$forename' and person.Surname = '$surname'),(SELECT Class_ID FROM class WHERE class.Class_Name = 'Class 1'))";
+		$sql3 = "INSERT INTO pupil(Person_Person_ID)VALUES((SELECT Person_ID FROM person WHERE person.Forename = '$forename' and person.Surname = '$surname'))";				
+						
+		$mysqli->query($sql1);
+		$mysqli->query($sql2);
+		$mysqli->query($sql3);
 	}	
 	?> 
       
