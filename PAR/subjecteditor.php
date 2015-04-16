@@ -4,7 +4,7 @@
 
 <meta charset="utf-8">
 <!-- TemplateBeginEditable name="doctitle" -->
-<title>Pupil Editor</title>
+<title>Subject Editor</title>
 <!-- TemplateEndEditable -->
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->

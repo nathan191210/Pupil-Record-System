@@ -167,6 +167,7 @@ header, section, footer, aside, article, figure {
 }
 .container .content section form {
 	display: table;  
+	
 }
 .container .content section form p {
 	display: table-row;
@@ -177,3 +178,8 @@ header, section, footer, aside, article, figure {
 .container .content section form p input {
 	display: table-cell;
 }
+.container .content section {
+	overflow: auto;
+	white-space: nowrap;
+}
+

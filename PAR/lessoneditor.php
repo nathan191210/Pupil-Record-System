@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="utf-8">
-<title>Pupil Editor</title>
+<title>Lesson Editor</title>
 <link href="CSS/pupilStyle.css" rel="stylesheet" type="text/css">
 </head>
 

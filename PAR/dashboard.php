@@ -82,6 +82,8 @@
       <li><a href="staffeditor.php">Staff Editor</a></li>
       <li><a href="subjecteditor.php">Subject Editor</a></li>
       <li><a href="lessoneditor.php">Lesson Editor</a></li>
+      <li><a href="assessmenteditor.php">Assessment Editor</a></li>
+      <li><a href="Test.php">Test Lesson</a></li>
       
     </ul>
     <div class = "new2">

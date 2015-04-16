@@ -4,7 +4,7 @@
 
 <meta charset="utf-8">
 <!-- TemplateBeginEditable name="doctitle" -->
-<title>Pupil Editor</title>
+<title>Assessment Editor</title>
 <!-- TemplateEndEditable -->
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->
@@ -80,9 +80,35 @@
 		if(isset($_POST['lesson'])){ $lesson = $_POST['lesson']; }
 	
 		$sql1 = "INSERT INTO assessment(Assessment_Title, Out_Of, Pass_Mark, Lesson_Lesson_ID)VALUES('$assname', 'assout', 'asspass', '$lesson')";	
-			$mysqli->query($sql1);
+			$mysqli->query($sql1);			
 		
+						
+		$sql2 = "SELECT Assessment_ID FROM assessment WHERE Assessment_Title = '$assname' LIMIT 1";
+		
+		if(!$resultss = $mysqli->query($sql2)){
+    			die('There was an error running the query [' . $mysqli->error . ']');
+			}
+			
+		while($row = $resultss->fetch_assoc()){
+			$temp = $row['Assessment_ID'] . '<br />';
+		}	
+		
+		$sql3 = "SELECT Lesson_Pupil_ID FROM lesson_pupil WHERE Lesson_Lesson_ID = '$lesson'";	
+		$results = $mysqli->query($sql3);
+				
+		while($row = $results->fetch_assoc()){
+   		 $temp2= $row['Lesson_Pupil_ID'];
+		 echo($temp2).'<br />';
+		 $sql4 = "INSERT INTO assessment_pupil(Assessment_Assessment_ID, Lesson_Pupil_Lesson_Pupil_ID)VALUES('$temp','$temp2')";
+		 $mysqli->query($sql4);	
 		}
+		
+									
+	}
+	
+		
+		
+		
 	?> 
 
     
