@@ -48,8 +48,7 @@
 	<h3>Create New Assessment</h3>
   
    <form method="post">
-   <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Click me to display Date and Time.</button>
-
+  
 		Lesson: <select name="lesson" >
         <?php 
             require_once("db_const.php");
@@ -106,18 +105,83 @@
 			while($row2 = $result3->fetch_assoc()){
 				$score = $row2['Assessment_Score'];
 				$assPupID = $row2['Assessment_Pupil_ID'];
-				$sub = "sub$assPupilID";
-				echo "<input type='text' name='$assPupID' value='$score'>";
+				$sub = "$assPupilID";
+				echo "<input type='text' id='$assPupID' value='$score'>";
 				
 				
 			}
-			echo "<input type='submit' name='$sub' value='Open' />";
+			echo "<input type='submit' id='$sub' value='Save' onClick='myFunction(this.id, $lesson)'/>";
 			echo"</br>";		
 		}	
 	}
 	
 	
 	?> 
+	<p id='txtHint'></p>
+	<script>
+    function myFunction(clicked_id, lesson) {
+		var link = clicked_id;
+		var lesson = lesson;
+		getRequest(link, lesson);    
+		
+    }
+	
+	
+	function getRequest(link, lesson) {
+		var str = link;
+		var lesson = lesson;
+		console.log(str);
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var plainResponse = xmlhttp.responseText;
+				var JSONObject = JSON.parse(plainResponse);
+				for (var i=0; i<JSONObject.length; i++) {
+					//console.log(JSONObject[i].Assessment_Pupil_ID);
+					var assessID = JSONObject[i].Assessment_Pupil_ID;
+					var assessScore = document.getElementById(assessID).value;
+					update(assessID, assessScore);
+					
+										
+				}
+				}
+			  }
+          
+        xmlhttp.open("GET","select.php?q="+str+"&l="+lesson,true);
+        xmlhttp.send();
+    }
+	
+	function update(assessID, assessScore) {
+		var assessID = assessID;
+		var assessScore = assessScore;
+		
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                
+			  }
+		}
+          
+        xmlhttp.open("GET","update.php?a="+assessScore+"&b="+assessID,true);
+        xmlhttp.send();
+    }
+	
+	
+	
+	
+    </script>
     
     </section>
   </article>

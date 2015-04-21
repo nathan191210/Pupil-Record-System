@@ -48,7 +48,8 @@
 	<h3>Add New Subject</h3>
   
     <form method="post">
-		Subject Name: <input type="text" name="subname" /><br />
+		<p>
+		  <input type="text" name="subname" placeholder="Subject Name" /></p>
 		<input type="submit" name="submit" value="Add" />
 	</form>
      

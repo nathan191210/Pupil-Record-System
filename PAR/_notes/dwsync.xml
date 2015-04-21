@@ -2,14 +2,11 @@
 <dwsync>
 <file name="functions.php" server="C:/wamp/www/" local="130705873629736893" remote="130705873620000000" Dst="2" />
 <file name="db_const.php" server="C:/wamp/www/" local="130730478885384599" remote="130730478880000000" Dst="2" />
-<file name="index.php" server="C:/wamp/www/" local="130729648722046003" remote="130729648720000000" Dst="2" />
-<file name="dashboard.php" server="C:/wamp/www/" local="130736583123764311" remote="130736583120000000" Dst="2" />
-<file name="pupileditor.php" server="C:/wamp/www/" local="130730458331708704" remote="130730458330000000" Dst="2" />
-<file name="staffeditor.php" server="C:/wamp/www/" local="130733937856535170" remote="130733937850000000" Dst="2" />
-<file name="subjecteditor.php" server="C:/wamp/www/" local="130729707757035202" remote="130729707750000000" Dst="2" />
-<file name="lessoneditor.php" server="C:/wamp/www/" local="130733937210275189" remote="130733937210000000" Dst="2" />
-<file name="assessmenteditor.php" server="C:/wamp/www/" local="130736615585964316" remote="130736615580000000" Dst="2" />
-<file name="lessondisplay.php" server="C:/wamp/www/" local="130733975774307788" remote="130733975770000000" Dst="2" />
-<file name="Test.php" server="C:/wamp/www/" local="130736641690441792" remote="130736641690000000" Dst="2" />
-<file name="untitled.php" server="C:/wamp/www/" local="130736644350959406" remote="130736644350000000" Dst="2" />
+<file name="index.php" server="C:/wamp/www/" local="130739948572613647" remote="130739948570000000" Dst="2" />
+<file name="staffeditor.php" server="C:/wamp/www/" local="130740817547013138" remote="130740817540000000" Dst="2" />
+<file name="pupileditor.php" server="C:/wamp/www/" local="130740819015446006" remote="130740819010000000" Dst="2" />
+<file name="lessoneditor.php" server="C:/wamp/www/" local="130740819924935593" remote="130740819920000000" Dst="2" />
+<file name="subjecteditor.php" server="C:/wamp/www/" local="130740811206325651" remote="130740811200000000" Dst="2" />
+<file name="lessondisplay.php" server="C:/wamp/www/" local="130736624728062988" remote="130736624720000000" Dst="2" />
+<file name="assessmenteditor.php" server="C:/wamp/www/" local="130740815682152193" remote="130740815680000000" Dst="2" />
 </dwsync>

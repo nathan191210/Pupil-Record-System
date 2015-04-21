@@ -183,3 +183,16 @@ header, section, footer, aside, article, figure {
 	white-space: nowrap;
 }
 
+
+.container .content section form {
+	margin: 0 auto; 
+	width:250px;
+}
+.container .content section form p input {
+	text-align:center;
+	align: center;
+	width:200px;
+}
+.container .content section form p select {
+	width:200px;
+}

@@ -40,10 +40,10 @@
     <h3>Add new Pupil</h3>
   
     <form method="post">
-		Lesson Title: <input type="text" name="lessonTitle" /><br />
-		Start Date: <input type="text" name="startDate" /><br /> 
-        End Date: <input type="text" name="endDate" /><br /> 
-        Subject:  <select name="subject" >    
+		<p><input type="text" name="lessonTitle" placeholder="Lesson Title" /></p>
+		<p><input type="text" name="startDate" placeholder="Start Date"/> </p>
+        <p><input type="text" name="endDate" placeholder="End Date"/> </p>
+        <p><select name="subject" placeholder="Subject" > 
             <?php 
 				require_once("db_const.php");
 				$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -55,8 +55,8 @@
 				echo '<option value="'.$row['Subject_ID'].'">'.$row['Subject_Name'].'</option>';
 				}
              ?>
-		</select><br />  
-        Staff: <select name="staff" >
+		</select></p>  
+        <p><select name="staff" placeholder="Staff" >
             <?php 
 				require_once("db_const.php");
 				$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -69,7 +69,7 @@
 				}
              ?>
 		</select><br />
-        Students: <select name="pupil[]" multiple="multiple" size="3" draggable="true">
+        <p><select name="pupil[]" multiple="multiple" size="3" draggable="true" placeholder="Pupils">
             <?php 
 				require_once("db_const.php");
 				$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -81,7 +81,7 @@
 				echo '<option value="'.$row['Pupil_ID'].'">'.$row['Forename']." ".$row['Surname'].'</option>';
 				}
              ?>
-		</select><br />
+		</select></p>
         <input type="submit" name="submit" value="Login" />
         
     </form>

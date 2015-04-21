@@ -37,18 +37,18 @@
 	<article class="content">
     	<h1>Staff Editor</h1>
     	<section>
-    		<h3>New Staff</h3>
+    		<h3>Add New Member of Staff</h3>
 				
             <form method="post">
-            	Forename: <input type="text" name="forename" /><br />
-                Surname: <input type="text" name="surname" /><br />
-                Role:<select name="role" size="1">
+            	<p><input type="text" name="forename" placeholder="Forename"/></p>
+                <p><input type="text" name="surname" placeholder="Surname"/></p>
+                <p><select name="role" size="1" placeholder="Role">
 					<option>Admin</option>
 					<option>Teacher</option>
 				</select><br />                
-				Username: <input type="text" name="username" /><br />
-				Password: <input type="text" name="password" /><br />			 
-				<input type="submit" name="submit" value="add" />
+				<p><input type="text" name="username" placeholder="Username"/></p>
+				<p><input type="text" name="password" placeholder="Password"/></p>			 
+				<input type="submit" name="submit" value="Add" />
 			</form>
 			
 			<?php 

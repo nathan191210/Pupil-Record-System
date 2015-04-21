@@ -48,13 +48,10 @@
 	<h3>Create New Assessment</h3>
   
     <form method="post">
-		Assement Name: 
-		  <input type="text" name="assname" /><br />
-        Out of: 
-		  <input type="text" name="assout" /><br />
-        Pass Mark: 
-		  <input type="text" name="asspass" /><br />      
-        Lesson: <select name="lesson" >
+		<p><input type="text" name="assname" placeholder="Assessment Name" /></p>
+        <p><input type="text" name="assout" placeholder="Out Of"/></p>
+        <p><input type="text" name="asspass"  placeholder="Pass Mark"/></p>      
+        <p><select name="lesson"  placeholder="Lesson">
         <?php 
             require_once("db_const.php");
             $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -65,7 +62,7 @@
             {
             echo '<option value="'.$row['Lesson_ID'].'">'.$row['Lesson_Title'].'</option>';
             }
-         ?>               
+         ?></select></p>               
 		<input type="submit" name="submit" value="Add" />
 	</form>
      
@@ -98,7 +95,6 @@
 				
 		while($row = $results->fetch_assoc()){
    		 $temp2= $row['Lesson_Pupil_ID'];
-		 echo($temp2).'<br />';
 		 $sql4 = "INSERT INTO assessment_pupil(Assessment_Assessment_ID, Lesson_Pupil_Lesson_Pupil_ID)VALUES('$temp','$temp2')";
 		 $mysqli->query($sql4);	
 		}

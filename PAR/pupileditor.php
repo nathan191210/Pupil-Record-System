@@ -47,9 +47,9 @@
     <h3>Add new Pupil</h3>
   
     <form method="post">
-		Forname: <input type="text" name="forename" /><br />
-		Surname: <input type="text" name="Surname" /><br /> 
-		<input type="submit" name="submit" value="Login" />
+		<p><input type="text" name="forename" placeholder="Forename" /></p>
+		<p><input type="text" name="Surname" placeholder="Surname" /></p>
+		<input type="submit" name="submit" value="Add"/> 
 	</form>
      
     <?php

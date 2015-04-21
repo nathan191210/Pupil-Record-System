@@ -14,15 +14,31 @@ body {
 	height: 400px;
 }
 .container-main .top img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	vertical-align: middle;
+	position: relative;
+ 	top: 50%;
+	transform: translateY(-50%);
+	left: 40%;
+	right:50%
+	
+	
+	
 }
-.container-main .bottom form {
 
-}
 .container-main .bottom {
 		width: 300px;
     margin: 0 auto;
 }
+
+.container-main .bottom form p label {
+	width: 4em;
+	float: left;
+	text-align: right;
+	margin-right: 1.5em;
+	display: block
+}
+
+
+.submit input
+{
+margin-left: 4.5em;
+} 
